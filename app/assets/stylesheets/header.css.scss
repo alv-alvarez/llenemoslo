@@ -1,0 +1,59 @@
+@import "compass/css3";
+
+header
+{
+  background: url("headerbg.png") repeat-x top center;
+  height: 124px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+.login
+{
+  padding-top: 10px
+}
+
+.login .navbar-inner
+{
+  min-height: 20px;
+}
+
+.login .navbar .nav > li > a
+{
+  padding: 10px 5px;
+}
+
+.login .navbar .divider-vertical 
+{
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid whitesmoke;
+  height: 20px;
+  margin: 9px 0px;
+}
+.navbar
+{
+  margin-bottom: 0px;
+}
+
+.navbar-inner
+{
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0px;
+}
+
+.navbar-search .search-query 
+{
+  background-color: #cccccc;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.logo
+{
+  width:250px;
+  height: auto;
+}
