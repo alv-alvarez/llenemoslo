@@ -2,7 +2,7 @@
 
 header
 {
-  background: url("headerbg.png") repeat-x top center;
+  @include background(image-url("headerbg.png") repeat-x top center);
   height: 124px;
   position: fixed;
   width: 100%;
