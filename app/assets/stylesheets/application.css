@@ -24,19 +24,17 @@ html, body
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -63px;
+  margin: 0 auto;
 }
 
 .content
 {
   padding-top: 119px;
-  min-height: 450px; 
 }
 
 footer
 {
   background-color: #000;
-  height: 80px;
   text-align: center;
 }
 
@@ -49,7 +47,7 @@ footer address
 .footer-links
 {
   color: #fff;
-  margin-top: 25px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
