@@ -12,17 +12,19 @@
  *= require bootstrap
  *= require bootstrap-responsive
  *= require_tree .
- */
+*/
 
-html 
+html, body 
 {
-    position: relative;
-    min-height: 100%;
+  height: 100%;
 }
 
-body 
+.wrapper 
 {
-    margin: 0 0 100px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -63px;
 }
 
 .content
@@ -36,9 +38,6 @@ footer
   background-color: #000;
   height: 80px;
   text-align: center;
-  position: absolute;
-  height: 100px;
-  width: 100%;
 }
 
 footer address
@@ -57,7 +56,6 @@ footer address
 .footer-links li
 {
   display: inline;
-  list-style: none;
 }
 
 .footer-links li a 
