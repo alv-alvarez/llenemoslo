@@ -63,3 +63,8 @@ footer address
   color: #fff;
   text-decoration: none;
 }
+
+[class^="icon-"]
+{
+  margin-right: 5px;
+}
