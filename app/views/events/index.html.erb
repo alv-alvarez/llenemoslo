@@ -1,0 +1,11 @@
+<h1>Evento</h1>
+
+<% @events.each do |event| %>
+  <p>
+    <%= link_to event.artista, event %>
+    <%= link_to "Editar", edit_event_path(event) %>
+    <%= link_to "Eliminar", event_path(event),  :method => :delete %>
+  </p>
+<% end %>
+
+<p><%= link_to "Agregar Eventos", new_event_path %></p>
