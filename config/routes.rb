@@ -1,5 +1,6 @@
 Llenemoslo::Application.routes.draw do
   
+  resources :events
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   root :to => "public#index"
