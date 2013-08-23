@@ -1,0 +1,22 @@
+<h1>Editar usuario</h1>
+<%= form_for (@event) do |f| %>
+  <p>
+    <%= f.label :artista %>
+    <%= f.text_field :artista %>
+  </p>
+  <p>
+    <%= f.label :fecha_evento %>
+    <%= f.text_field :fecha_evento %>
+  </p>
+  <p>
+    <%= f.label :descripcion %>
+    <%= f.text_field :descripcion %>
+  </p>
+  <p>
+    <%= f.label :fecha_cierre %>
+    <%= f.text_field :fecha_cierre %>
+  </p>
+  <p>
+    <%= f.submit "Editar Cuenta", :class => "btn" %>
+  </p>
+<% end %>
