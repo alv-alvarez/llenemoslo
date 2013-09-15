@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  
   def index
     @events = Event.all
   end
@@ -45,6 +46,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:artista, :fecha_evento, :descripcion, :fecha_cierre)
+      params.require(:event).permit(:artista, :fecha_evento, :lugar ,:descripcion, :fecha_cierre, :imagen)
     end  
 end
