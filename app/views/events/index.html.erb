@@ -2,9 +2,14 @@
 
 <% @events.each do |event| %>
   <p>
+    <%= image_tag event.imagen.url(:thumb) %>
     <%= link_to event.artista, event %>
-    <%= link_to "Editar", edit_event_path(event) %>
-    <%= link_to "Eliminar", event_path(event),  :method => :delete %>
+    <% if can? :update, event %>
+      <%= link_to "Editar", edit_event_path(event) %>
+    <% end %>
+    <% if can? :delete, event %>
+      <%= link_to "Eliminar", event_path(event),  :method => :delete %>
+    <% end %>
   </p>
 <% end %>
 

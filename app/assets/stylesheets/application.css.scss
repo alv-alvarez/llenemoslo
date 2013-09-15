@@ -11,26 +11,33 @@
  *= require_self
  *= require bootstrap
  *= require bootstrap-responsive
+ *= require jquery.ui.datepicker
  *= require_tree .
 */
+@import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
 
 html, body 
 {
   height: 100%;
 }
 
-.wrapper 
+#wrapper 
 {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto;
-  margin-bottom: -75px;
+  margin: 0 auto -75px;
 }
 
-.content
+#wrapper > .container
 {
   padding-top: 119px;
+}
+
+#push
+{
+  height: 100px;
 }
 
 footer
