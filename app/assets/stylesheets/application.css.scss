@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require bootstrap
+ *= require bootstrap-responsive
+ *= require jquery.ui.datepicker
+ *= require_tree .
+*/
+@import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
+
+html, body 
+{
+  height: 100%;
+}
+
+#wrapper 
+{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -75px;
+}
+
+#wrapper > .container
+{
+  padding-top: 119px;
+}
+
+#push
+{
+  height: 100px;
+}
+
+footer
+{
+  background-color: #000;
+  text-align: center;
+}
+
+footer address
+{
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.footer-links
+{
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-links li
+{
+  display: inline;
+}
+
+.footer-links li a 
+{
+  color: #fff;
+  text-decoration: none;
+}
+
+[class^="icon-"]
+{
+  margin-right: 5px;
+}
