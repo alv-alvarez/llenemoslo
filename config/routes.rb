@@ -2,6 +2,7 @@ Llenemoslo::Application.routes.draw do
   
   resources :events
   devise_for :users, :controllers => { :registrations => "registrations" }
+  get "como-funciona", to: "public#comoFunciona"
 
   root :to => "public#index"
 
