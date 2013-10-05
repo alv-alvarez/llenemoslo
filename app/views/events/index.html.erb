@@ -19,8 +19,9 @@
     <div class="span4">
       <%= image_tag event.imagen.url(:medium) %>
     </div>
-    <div class="span4">
+    <div class="span4 text-center">
       <%= event.descripcion %>
+      <p><%= link_to 'MAS INFORMACION', event, class: 'item-detalles' %>
     </div>
     <div class="span4 text-center">
       <hr>
