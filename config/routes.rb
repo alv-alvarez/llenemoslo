@@ -1,7 +1,11 @@
 Llenemoslo::Application.routes.draw do
+   
+  devise_for :users, :controllers => { :registrations => "registrations" }
+  ActiveAdmin.routes(self) 
+
   
   resources :events
-  devise_for :users, :controllers => { :registrations => "registrations" }
+  
   get "como-funciona", to: "public#comoFunciona"
 
   root :to => "public#index"
