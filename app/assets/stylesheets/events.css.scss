@@ -1,3 +1,35 @@
-// Place all the styles related to the Events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass/css3";
+
+h1
+{
+  color: #C10B19; 
+  font-family: 'Titillium Web', sans-serif;
+  font-style: bold;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+h3
+{
+  color: #C10B19; 
+  font-family: 'Titillium Web', sans-serif;
+  font-style: bold;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+hr
+{
+  margin: 10px 0;
+  border-top: 1px solid #A2A2A2;
+}
+
+.item-detalles
+{
+  color: #C10B19;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: bold;
+  font-size: 15px;
+  font-weight: 600;
+}

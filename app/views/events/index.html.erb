@@ -1,16 +1,41 @@
-<h1>Evento</h1>
+<h1>EVENTOS</h1>
+<hr>
 
 <% @events.each do |event| %>
-  <p>
-    <%= image_tag event.imagen.url(:thumb) %>
-    <%= link_to event.artista, event %>
-    <% if can? :update, event %>
-      <%= link_to "Editar", edit_event_path(event) %>
-    <% end %>
-    <% if can? :delete, event %>
-      <%= link_to "Eliminar", event_path(event),  :method => :delete %>
-    <% end %>
-  </p>
+
+  <div class="row">
+    <div class="span4">
+        
+        <h3><%= event.artista.upcase %></h3>  
+    </div>
+    <div class="span4 text-center">
+    <%= image_tag "logomini.png" %>
+    </div>
+    <div class="span4 text-center">
+      <h3>DETALLES:</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <%= image_tag event.imagen.url(:medium) %>
+    </div>
+    <div class="span4 text-center">
+      <%= event.descripcion %>
+      <p><%= link_to 'MAS INFORMACION', event, class: 'item-detalles' %>
+    </div>
+    <div class="span4 text-center">
+      <hr>
+      <span class="item-detalles">LUGAR | </span><%= event.lugar %>
+      <hr>
+      <span class="item-detalles">FECHA | </span><%= event.fecha_evento %>
+      <hr>
+      <span class="item-detalles">HORA | </span><%= %>
+      <hr>
+      <span class="item-detalles">CIERRE DE APUESTAS | </span><%= event.fecha_cierre %>
+      <hr>
+    </div>
+  </div>
+  <hr>
+  
 <% end %>
 
-<p><%= link_to "Agregar Eventos", new_event_path %></p>
