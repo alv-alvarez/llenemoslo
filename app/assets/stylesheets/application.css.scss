@@ -29,10 +29,11 @@ html, body
   height: auto !important;
   height: 100%;
   margin: 0 auto -75px;
+}
 
-  .container{
-    padding-top: 119px;
-  }
+#wrapper > .container
+{
+  padding-top: 119px;
 }
 
 #push
