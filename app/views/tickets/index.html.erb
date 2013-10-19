@@ -1,0 +1,20 @@
+<h1>TUS TICKETS</h1>
+<hr>
+
+<% @tickets.each do |ticket| %>
+  <div class="row">
+    <div class="span3">
+        <span class="item-detalles"><%= ticket.event.artista.upcase %></span>  
+    </div>
+    <div class="span3">
+       <span class="item-detalles">FECHA | </span><%= ticket.event.fecha_evento.strftime("%d-%m-%Y") %>
+    </div>
+    <div class="span3">
+       <span class="item-detalles">APUESTA | </span><%= ticket.apuesta %>
+    </div>
+    <div class="span3">
+       <span class="item-detalles">ESTADO | </span>
+    </div>
+  </div>
+  <hr>  
+<% end %>
