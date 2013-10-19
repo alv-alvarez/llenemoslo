@@ -5,14 +5,6 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => exception.message
   end
-
-  before_filter :configure_permitted_parameters, if: :devise_controller?
-  
-  before_filter do
-    resource = controller_name.singularize.to_sym
-    method = "#{resource}_params"
-    params[resource] &&= send(method) if respond_to?(method, true)
-  end
   
   def authenticate_admin_user!
     authenticate_user! 
@@ -30,8 +22,9 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:nombre, :email, :password, :password_confirmation, :roles)}
-    devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:nombre, :rut, :fecha_nacimiento, :email)}
-  end
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:nombre, :email, :password, :password_confirmation, :roles)}
+      devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:nombre, :email, :rut, :fecha_nacimiento, :password, :password_confirmation)}
+    end
+
 end
