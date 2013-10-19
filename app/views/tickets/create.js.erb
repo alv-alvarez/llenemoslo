@@ -1,0 +1,6 @@
+<% if @ticket.errors.any? %>
+  alert('no se pudo guardar!')
+<% else %>
+  $("#modal-apuesta").modal('hide');
+<% end %>
+
