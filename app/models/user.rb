@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   rolify
   
+  has_many :ticket
   before_create :default_role
 
   def default_role
