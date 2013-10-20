@@ -16,5 +16,6 @@
 //= require bootstrap-modal
 //= require bootstrap-transition
 //= require bootstrap-dropdown
+//= require bootstrap-carousel
 //= require turbolinks
 //= require_tree .
