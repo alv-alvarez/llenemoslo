@@ -1,1 +1,27 @@
-<%= image_tag "pasos.png" %>
+<h1>COMO FUNCIONA</h1>
+<hr>
+<!-- <%= image_tag "pasos.png" %> -->
+<div id="pasos" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#pasos" data-slide-to="0" class="active"></li>
+    <li data-target="#pasos" data-slide-to="1" class=""></li>
+    <li data-target="#pasos" data-slide-to="2" class=""></li>
+    <li data-target="#pasos" data-slide-to="3" class=""></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag "paso1.png" %>
+    </div>
+    <div class="item">
+      <%= image_tag "paso2.png" %>
+    </div>
+    <div class="item">
+      <%= image_tag "paso3.png" %>
+    </div>
+    <div class="item">
+      <%= image_tag "paso4.png" %>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#pasos" data-slide="prev">‹</a>
+  <a class="right carousel-control" href="#pasos" data-slide="next">›</a>
+</div>
