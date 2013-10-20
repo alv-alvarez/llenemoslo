@@ -4,4 +4,8 @@ class PublicController < ApplicationController
 
   def comoFunciona
   end
+
+  def contacto
+  end
+  
 end
