@@ -10,6 +10,7 @@ Llenemoslo::Application.routes.draw do
   resources :tickets
   
   get "como-funciona", to: "public#comoFunciona"
+  get "contacto", to: "public#contacto"
 
 
   root :to => "public#index"
