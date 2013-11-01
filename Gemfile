@@ -20,6 +20,7 @@ gem 'rolify'
 
 group :production do
   gem 'rails_12factor'
+  gem 'newrelic_rpm'
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
