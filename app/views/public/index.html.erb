@@ -1,4 +1,16 @@
 <%= image_tag "como-funciona.png" %>
-<div>
-  <h3>EVENTOS PRINCIPALES<h3>
+<div class="row">
+  <div class="span12 text-center">
+    <h1>EVENTOS PRINCIPALES</h1>
+  </div>
+  <ul class="thumbnails">
+    <% @events.each do |event| %>
+      <li class="span3">
+        <h3><%= event.artista %></h3>
+        <div class="thumbnail">
+          <%= image_tag event.imagen.url(:index)  %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>

@@ -2,40 +2,45 @@
 <hr>
 
 <% @events.each do |event| %>
-
   <div class="row">
-    <div class="span4">
-        
+    <div class="span3">
         <h3><%= event.artista.upcase %></h3>  
     </div>
-    <div class="span4 text-center">
-    <%= image_tag "logomini.png" %>
+    <div class="span5 text-center">
+      <%= image_tag "logomini.png", class: 'logo-mini' %>
     </div>
     <div class="span4 text-center">
       <h3>DETALLES:</h3>
     </div>
   </div>
   <div class="row">
-    <div class="span4">
+    <div class="span3">
       <%= image_tag event.imagen.url(:medium) %>
     </div>
-    <div class="span4 text-center">
+    <div class="span5 text-center">
       <%= event.descripcion %>
-      <p><%= link_to 'MAS INFORMACION', event, class: 'item-detalles' %>
+      <p><%= link_to 'MAS INFORMACION', event, class: "item-detalles" %>
+      <div class="row">
+        <div class="span5">
+          <% if user_signed_in? %>
+            <p><%= link_to 'VOY', new_event_ticket_path(event.id), { :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-apuesta', class: "item-detalles" } %>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div class="span4 text-center">
       <hr>
       <span class="item-detalles">LUGAR | </span><%= event.lugar %>
       <hr>
-      <span class="item-detalles">FECHA | </span><%= event.fecha_evento %>
+      <span class="item-detalles">FECHA | </span><%= event.fecha_evento.strftime("%d-%m-%Y") %>
       <hr>
-      <span class="item-detalles">HORA | </span><%= %>
+      <span class="item-detalles">HORA | </span><%= event.fecha_evento.strftime("%I:%M %p") %>
       <hr>
-      <span class="item-detalles">CIERRE DE APUESTAS | </span><%= event.fecha_cierre %>
+      <span class="item-detalles">CIERRE DE APUESTAS | </span><%= event.fecha_cierre.strftime("%d-%m-%Y") %>
       <hr>
     </div>
   </div>
   <hr>
-  
 <% end %>
 
+<div id="modal-apuesta" class="modal hide fade" role="dialog"></div>
