@@ -1,6 +1,7 @@
 Llenemoslo::Application.routes.draw do
    
   devise_for :users, :controllers => { :registrations => "registrations" }
+  
   ActiveAdmin.routes(self) 
 
   resources :events do

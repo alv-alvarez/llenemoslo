@@ -1,29 +1,20 @@
 class RegistrationsController < Devise::RegistrationsController
   def update
-    @user = User.find(current_user.id)
-
-    successfully_updated = if needs_password?(@user, params)
-      @user.update_with_password(devise_parameter_sanitizer.for(:account_update))
-    else
-      params[:user].delete(:current_password)
-      @user.update_without_password(devise_parameter_sanitizer.for(:account_update))
+    account_update_params = devise_parameter_sanitizer.sanitize(:account_update)
+    
+    if account_update_params[:password].blank?
+      account_update_params.delete("password")
+      account_update_params.delete("password_confirmation")
     end
 
-    if successfully_updated
+    @user = User.find(current_user.id)
+    if @user.update_attributes(account_update_params)
       set_flash_message :notice, :updated
-      
+      # Sign in the user bypassing validation in case his password changed
       sign_in @user, :bypass => true
       redirect_to after_update_path_for(@user)
     else
       render "edit"
     end
   end
-
-  private 
-
-    def needs_password?(user, params)
-      user.email != params[:user][:email] ||
-        params[:user][:password].present?
-    end
-
 end
